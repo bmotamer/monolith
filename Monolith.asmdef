@@ -1,11 +1,14 @@
 {
     "name": "Monolith",
+    "rootNamespace": "Monolith",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": true,
-    "overrideReferences": true,
-    "precompiledReferences": [],
+    "overrideReferences": false,
+    "precompiledReferences": [
+        ""
+    ],
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],

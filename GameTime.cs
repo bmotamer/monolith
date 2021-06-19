@@ -4,14 +4,14 @@ namespace Monolith
     public readonly struct GameTime
     {
 
-        public readonly float DeltaTime;
-        public readonly float FixedDeltaTime;
+        public readonly float Delta;
+        public readonly float FixedDelta;
         public readonly long UtcTimestamp;
         
-        public GameTime(float deltaTime, float fixedDeltaTime, long utcTimestamp)
+        public GameTime(float delta, float fixedDelta, long utcTimestamp)
         {
-            DeltaTime = deltaTime;
-            FixedDeltaTime = fixedDeltaTime;
+            Delta = delta;
+            FixedDelta = fixedDelta;
             UtcTimestamp = utcTimestamp;
         }
         
