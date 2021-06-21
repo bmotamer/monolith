@@ -6,20 +6,23 @@ namespace Monolith
 
     public abstract class Game
     {
-
+        
+        public readonly IGameBootOptions BootOptions;
         public readonly GameStateManager StateManager;
 
         private readonly IGameEngineListener _engineListener;
 
         public GameTime Time { get; private set; }
 
-        protected Game(IGameEngineListener engineListener)
+        protected Game(IGameEngineListener engineListener, IGameBootOptions bootOptions)
         {
             _engineListener = engineListener ?? throw new ArgumentNullException(nameof(engineListener));
 
             _engineListener.OnFrameEnter += OnFrameEnter;
             _engineListener.OnFrameExit += OnFrameExit;
             _engineListener.OnDispose += OnDispose;
+
+            BootOptions = bootOptions;
 
             GameStateTreeStatic stateTree = CreateStateTree();
 
